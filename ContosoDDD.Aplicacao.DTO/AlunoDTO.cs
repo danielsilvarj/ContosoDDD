@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ContosoDDD.Aplicacao.DTO
+﻿namespace ContosoDDD.Aplicacao.DTO
 {
     public class AlunoDTO
     {

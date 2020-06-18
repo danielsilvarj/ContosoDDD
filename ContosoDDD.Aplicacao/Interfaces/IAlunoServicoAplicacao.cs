@@ -7,6 +7,7 @@ namespace ContosoDDD.Aplicacao.Interfaces
 {
     public interface IAlunoServicoAplicacao : IBaseServicoAplicacao<Aluno>
     {
-
+        Aluno DetalharPorNome(string busca);
+        IEnumerable<Aluno> ListarAlunosAtivos();
     }
 }

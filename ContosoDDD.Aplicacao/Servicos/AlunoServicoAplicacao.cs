@@ -3,15 +3,28 @@ using ContosoDDD.Dominio.Entidade;
 using ContosoDDD.Dominio.Interfaces.Servicos;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ContosoDDD.Aplicacao.Servicos
 {
     public class AlunoServicoAplicacao : BaseServicoAplicacao<Aluno>, IAlunoServicoAplicacao
     {
-        public AlunoServicoAplicacao(IBaseServicoDominio<Aluno> servicoDominio) : base(servicoDominio)
-        {
 
+        public readonly IAlunoServicoDominio _alunoServicoDominio;
+
+        public AlunoServicoAplicacao(IAlunoServicoDominio alunoServicoDominio) 
+            : base(alunoServicoDominio)
+        {
+            _alunoServicoDominio = alunoServicoDominio;
+        }
+
+        public Aluno DetalharPorNome(string busca)
+        {
+            return _alunoServicoDominio.DetalharPorNome(busca);
+        }
+
+        public IEnumerable<Aluno> ListarAlunosAtivos()
+        {
+            return _alunoServicoDominio.ListarAlunosAtivos();
         }
     }
 }

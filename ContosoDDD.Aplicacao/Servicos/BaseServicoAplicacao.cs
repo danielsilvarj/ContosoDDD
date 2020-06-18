@@ -2,7 +2,6 @@
 using ContosoDDD.Dominio.Interfaces.Servicos;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ContosoDDD.Aplicacao.Servicos
 {
@@ -11,7 +10,7 @@ namespace ContosoDDD.Aplicacao.Servicos
 
         private readonly IBaseServicoDominio<T> _servicoDominio;
 
-        public BaseServicoAplicacao( IBaseServicoDominio<T> servicoDominio)
+        public BaseServicoAplicacao( IBaseServicoDominio<T> servicoDominio )
         {
             _servicoDominio = servicoDominio;
         }
