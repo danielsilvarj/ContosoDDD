@@ -1,4 +1,5 @@
-﻿using ContosoDDD.Aplicacao.Interfaces;
+﻿using ContosoDDD.Aplicacao.DTO;
+using ContosoDDD.Aplicacao.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,11 +37,11 @@ namespace ContosoDDD.MVC.Controllers
         // POST: Aluno/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(AlunoDTO alunoDTO)
         {
             try
             {
-                // TODO: Add insert logic here
+                _alunoServicoAplicacao.Adicionar(alunoDTO);
 
                 return RedirectToAction(nameof(Index));
             }
